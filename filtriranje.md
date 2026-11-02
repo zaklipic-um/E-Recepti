@@ -24,12 +24,3 @@
 - Dodani so prilagodljivi slogi za prikaz naprednih filtrov na večjih in manjših zaslonih.
 - Izbrani vrstni red se pošlje skupaj z naprednimi filtri, zato ostane uporabljen tudi ob iskanju in hitrem filtru popularnih kategorij.
 
-## Kaj je bilo odstranjeno
-
-- Nič.
-
-## Primer uporabe API-ja
-
-`GET /api/recepti?kategorija=Juha&najvecjiCas=30&sestavina=korenje&razvrsti=casAsc`
-
-Primer vrne recepte kategorije Juha, ki so pripravljeni v največ 30 minutah, vsebujejo sestavino, katere ime vključuje »korenje«, in jih uredi po času priprave naraščajoče.

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>E-Recepti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark">✳</span><span>E-Recepti</span></a>
+    <span class="top-note">NAJBOLJŠA HRANA NA ENEM MESTU!</span>
+    <button class="button button-dark" id="new-recipe"><span>＋</span> Dodaj recept</button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">ZBIRKA NAJBOLJŠIH RECEPTOV NA SPLETU</p><h1>Kaj bo danes<br><em>dišalo iz kuhinje?</em></h1><p class="hero-sub">Najljubši recepti, zbrani na enem mestu.<br>Izberi nekaj dobrega in zavihaj rokave.</p></div>
+      <div class="hero-art"><img src="/slike/knjiga_receptov.jpg" alt="Knjiga receptov" style="width:100%;height:100%;object-fit:contain"></div>
+    </section>
+    <section class="toolbar" aria-label="Iskanje receptov">
+      <div class="section-label"><span class="label-dot"></span><span id="recipe-count">RECEPTI</span></div>
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Poišči recept ali sestavino…" aria-label="Poišči recept"></label>
+      <select id="category-filter" aria-label="Filtriraj po kategoriji"><option value="">Popularne kategorije</option></select>
+    </section>
+    <!-- VAJA3 -->
+    <!-- Napredni filtri so ločeni od obstoječega iskanja in popularnih kategorij. -->
+    <section class="advanced-filters" aria-label="Podrobno filtriranje receptov">
+      <div class="advanced-filters-heading"><strong>Podrobno filtriranje</strong><button type="button" id="clear-filters" class="text-button">Počisti filtre</button></div>
+      <div class="advanced-filter-fields">
+        <label>Kategorija<select id="advanced-category"><option value="">Vse kategorije</option></select></label>
+        <label>Največ časa priprave (min)<input id="max-prep-time" type="number" min="0" placeholder="npr. 30"></label>
+        <label>Sestavina vsebuje<input id="ingredient-filter" type="search" placeholder="npr. paradižnik"></label>
+      </div>
+      <!-- VAJA3 -->
+      <!-- Razvrščanje je del nastavitev seznama in se pošlje z naprednimi filtri v API. -->
+      <label class="sort-control">Razvrsti po
+        <select id="recipe-sort">
+          <option value="nazivAsc">Imenu: A–Ž</option>
+          <option value="nazivDesc">Imenu: Ž–A</option>
+          <option value="casAsc">Času priprave: najkrajši najprej</option>
+          <option value="casDesc">Času priprave: najdaljši najprej</option>
+        </select>
+      </label>
+    </section>
+    <section id="recipe-grid" class="recipe-grid" aria-live="polite"></section>
+    <section id="empty-state" class="empty-state" hidden><span>◌</span><h2>Še ni receptov</h2><p>Dodaj prvega in začni graditi svojo zbirko.</p><button class="button button-dark" id="empty-add">＋ Dodaj recept</button></section>
+  </main>
+  <footer><span>✳ E-Recepti</span><span>SHRANJUJ. KUHAJ. DELI.</span></footer>
+
+  <dialog id="recipe-dialog">
+    <form id="recipe-form" method="dialog">
+      <div class="dialog-head"><div><p class="eyebrow">TVOJA KUHINJA</p><h2 id="dialog-title">Nov recept</h2></div><button type="button" class="icon-button" id="close-dialog" aria-label="Zapri">×</button></div>
+      <input type="hidden" id="recipe-id">
+      <div class="form-grid">
+        <label class="wide">Ime recepta<input id="name" name="naziv" required maxlength="120" placeholder="npr. Nedeljska jabolčna pita"></label>
+        <label>Kategorija<input id="category" name="kategorija" maxlength="60" placeholder="Sladice"></label>
+        <label>Čas priprave (min)<input id="time" name="casPriprave" type="number" min="0" required placeholder="45"></label>
+        <label class="wide">Kratek opis<textarea id="description" name="opis" rows="2" maxlength="500" placeholder="Kaj naredi ta recept poseben?"></textarea></label>
+        <div class="wide ingredient-block"><div class="ingredient-heading"><span>Sestavine</span><button type="button" class="text-button" id="add-ingredient">＋ Dodaj sestavino</button></div><div id="ingredient-list"></div></div>
+        <label class="wide">Navodila za pripravo<textarea id="instructions" name="navodilaPriprave" rows="5" placeholder="Opiši postopek po korakih…"></textarea></label>
+      </div>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" class="button button-quiet" id="cancel-dialog">Prekliči</button><button type="submit" class="button button-dark">Shrani recept <span>→</span></button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>

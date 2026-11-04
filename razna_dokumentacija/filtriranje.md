@@ -1,4 +1,4 @@
-# Poročilo: podrobno filtriranje receptov
+# podrobno filtriranje receptov
 
 ## Kaj je bilo dodano
 

@@ -62,22 +62,22 @@ Primer recepta (s sestavinami):
 
 
 Uporaba metode GET (iskanje po ID)
-![uporabaMetodeGETzaIskanjePoID.png](posnetki_zaslona_CRUD/GETwithID.png)
+![uporabaMetodeGETzaIskanjePoID.png](../posnetki_zaslona_CRUD/GETwithID.png)
 
 Uporaba metode GET (pregled vseh receptov)
-![uporabaMetodeGETzaPregledVsehReceptov.png](posnetki_zaslona_CRUD/GET%28vec%29.png)
+![uporabaMetodeGETzaPregledVsehReceptov.png](../posnetki_zaslona_CRUD/GET(vec).png)
 
 Uporaba POST metode
-![POST1.png](posnetki_zaslona_CRUD/POST1.png)
+![POST1.png](../posnetki_zaslona_CRUD/POST1.png)
 
 Uporaba PUT metode z ID 1
-![uporabaPUTmetodeZId.png](posnetki_zaslona_CRUD/beforeDELETEafterPUTid1.png)
+![uporabaPUTmetodeZId.png](../posnetki_zaslona_CRUD/beforeDELETEafterPUTid1.png)
 
 Uporaba DELETE metode po ID-ju
-![uporabaDELETEmetodePoID.png](posnetki_zaslona_CRUD/afterDELETEafterPUTid1.png)
+![uporabaDELETEmetodePoID.png](../posnetki_zaslona_CRUD/afterDELETEafterPUTid1.png)
 
 
 <!--  -->
 
 Delovanje H2 baze znotraj pomnilnika
-![delovanjeH2bazeZnotrajPomnilnika.png](posnetki_zaslona_CRUD/h2_memory_database.png)
+![delovanjeH2bazeZnotrajPomnilnika.png](../posnetki_zaslona_CRUD/h2_memory_database.png)

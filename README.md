@@ -178,3 +178,6 @@ Ne dodajaj gesel, dostopnih žetonov, osebnih podatkov, `frontend/node_modules/`
 - Pri spremembah API-ja posodobi pripadajočo dokumentacijo OpenAPI in po potrebi frontend.
 - Uporabniške vrednosti pri izpisu v HTML ustrezno ubeži; vmesnik že uporablja funkcijo `escapeHtml`.
 - Commiti naj bodo majhni, povezani z eno spremembo in opisani z jasnim sporočilom.
+- Ne commitaj node_modules in podobno, uporabljaj gitignore.
+- Jasno komentiraj, da je koda bolj raumljiva.
+- Sproti testiraj delovanje.

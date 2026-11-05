@@ -181,3 +181,4 @@ Ne dodajaj gesel, dostopnih žetonov, osebnih podatkov, `frontend/node_modules/`
 - Ne commitaj node_modules in podobno, uporabljaj gitignore.
 - Jasno komentiraj, da je koda bolj raumljiva.
 - Sproti testiraj delovanje.
+- Pri delu z umetno inteligenco obvezno preveri, kaj je naredila, preden commitaš.
